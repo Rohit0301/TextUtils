@@ -27,7 +27,7 @@ def Analyze(request):
                 analyzed=analyzed+char
         params={'purpose':'Removed Punctuation','analyzed_text':analyzed}
         djtext=analyzed
-        #return render(request,'analyze.html',params)
+  
 
     if fullcaps=="on":
         featues=1
@@ -36,8 +36,7 @@ def Analyze(request):
             analyzed=analyzed+char.upper()
         params={'purpose':'Changed to uppercase','analyzed_text':analyzed}
         djtext=analyzed
-        # return render(request,'analyze.html',params)
-
+      
     if newlineremover=="on":
         featues=1
         analyzed=""
@@ -46,7 +45,7 @@ def Analyze(request):
                 analyzed=analyzed+char
         params={'purpose':'Removed newLine','analyzed_text':analyzed}
         djtext=analyzed
-        # return render(request,'analyze.html',params)
+  
 
     if extraspaceremover=="on":
         featues=1
@@ -57,7 +56,7 @@ def Analyze(request):
                 
         params={'purpose':'Removed Extra space','analyzed_text':analyzed}
         djtext=analyzed
-        # return render(request,'analyze.html',params)
+     
 
     if charcounter=="on":
         featues=1
@@ -68,7 +67,7 @@ def Analyze(request):
                 
         params={'purpose':'Characters Counted','analyzed_text':analyzed}
        
-        # return render(request,'analyze.html',params)
+   
     if featues==0:
         return HttpResponse('<h1><strong>Error!</strong> please select any operation</h1>')
     return render(request,'analyze.html',params)
