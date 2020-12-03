@@ -39,7 +39,7 @@
 
 <!-- form -->
 <div class="container">
-<form action='/Analyze' method='get'>
+<form action='/Analyze' method='post'> {% csrf_token %}
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Enter your text here..</label>
     <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="5"></textarea>
@@ -56,7 +56,7 @@
 
 <div class="custom-control custom-switch">
   <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
-  <label class="custom-control-label" for="customSwitch2">Captitalise ht text</label>
+  <label class="custom-control-label" for="customSwitch2">Captitalise the text</label>
 </div>
 
 <div class="custom-control custom-switch">
